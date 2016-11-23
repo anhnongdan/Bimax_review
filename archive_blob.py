@@ -17,35 +17,42 @@ logfile = "/home/tony/bimax_docker/pw1/gits/Bimax_test/src/log/" + __module__ + 
 
 #parameters to check archive performance
 typical_archive = 300  #typical archive take 5 min to finish
+config_myperiod = 600
 
 #logging.basicConfig(logfile,level=logging.DEBUG)
 
-def init_count_list():
+def init_count_list(args):
     count_list = {}
-    start = datetime.datetime(2016, 11, 22, 0, 0, 0)
-    end = datetime.datetime(2016, 11, 22, 23, 50, 0)
+    #start = datetime.datetime(2016, 11, 22, 0, 0, 0)
+    #end = datetime.datetime(2016, 11, 22, 23, 50, 0)
+    
+    start = datetime.datetime.strptime(args + '00:00:00', "%Y-%m-%d %H:%M:%S")
+    end = datetime.datetime.strptime(args + '23:50:00', "%Y-%m-%d %H:%M:%S")
+    
     while (start <= end ):
         #print str(start)
         count_list[ str(start) ] = 0
-        start = start + datetime.timedelta(seconds=600)
+        start = start + datetime.timedelta(seconds=config_myperiod)
     return count_list
 
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+        opts, args = getopt.getopt(argv,"hi:o:",["ifile=","date="])
     except getopt.GetoptError:
-        print 'Usage: archive_blob.py -i <inputfile>'
+        print 'Usage: archive_blob.py -i <inputfile> -d <date_to_inspect>'
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'Usage: archive_blob.py -i <inputfile>'
+            print 'Usage: archive_blob.py -i <inputfile> -d <date_to_inspect>'
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
+        elif opt in ("-d", "--date"):
+            date = arg
     input = inputfile + '.txt'
     output = inputfile + '.o'
         
-    count_list = init_count_list()
+    count_list = init_count_list(date)
     slow_archives = dict()
     wrong_archives = dict()
     f = open(input, 'r')
