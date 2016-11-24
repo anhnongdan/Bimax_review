@@ -7,7 +7,7 @@ type='blob'
 date=$1
 metric=$2
 
-docker exec -it bimax_db1_1 sh /app/db_query.sh blob $type $date $metric
+docker exec -it bimax_db1_1 sh /app/db_query.sh $type $date $metric
 
 if [ -f /data/bimax/pw1/db/etc/out/archive_${type}_${date}_$metric.txt ];
 then
