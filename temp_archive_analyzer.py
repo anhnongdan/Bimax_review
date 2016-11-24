@@ -40,7 +40,7 @@ def init_count_list(args):
 
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv, "hi:d:m", ["ifile=", "date=", "metric="])
+        opts, args = getopt.getopt(argv, 'hi:d:m:', ["ifile=", "date=", "metric="])
     except getopt.GetoptError:
         print 'Usage: archive_blob.py -i <inputfile> -d <date_to_inspect>'
         sys.exit(2)
@@ -53,7 +53,7 @@ def main(argv):
         elif opt in ("-d", "--date"):
             date = arg
         elif opt in ("-m", "--metric"):
-            metric = arg
+            calc_metric = arg
     input = inputfile + '.txt'
     output = inputfile + '.o'
 
@@ -96,7 +96,7 @@ def main(argv):
 
     fwrite.write("=== Bimax System Archive Report === \n")
     fwrite.write("Datetime: {0:s} \n".format( str(datetime.datetime.now()) ))
-    fwrite.write("Metric calculated: {0:s} \n".format(metric))
+    fwrite.write("Metric calculated: {0:s} \n".format(calc_metric))
     fwrite.write(">>>>>>>>>>>>>>><<<<<<<<<<<<<< \n \n")
 
     fwrite.write("   *************************** \n")
