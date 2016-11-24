@@ -1,4 +1,8 @@
+#!/usr/bin/env bash
 mysql="mysql pw1 -N -s -A"
+
+#This is waiting to be delete
+## @obsoleted
 
 #this takes 2 arguments for archive type: (blob or numeric) 
 # and archive day (in the year of 2016)

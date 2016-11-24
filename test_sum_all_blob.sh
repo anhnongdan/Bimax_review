@@ -1,15 +1,17 @@
 #!/bin/sh
 
-#This takes 1 parameter - the date for archiving 2016_11_23 for example
+#This takes 1 parameter
+# the date for archiving: 2016_11_23 for example
+type='blob'
 
-docker exec -it bimax_db1_1 sh /app/blob_query.sh blob $1
+docker exec -it bimax_db1_1 sh /app/db_query.sh blob $1 'Actions_actions'
 
-if [ -f /data/bimax/pw1/db/etc/out/archive_blob_${1}.txt ];
+if [ -f /data/bimax/pw1/db/etc/out/archive_${type}_${1}.txt ];
 then
-    mv /data/bimax/pw1/db/etc/out/archive_blob_${1}.txt /data/bimax/pw1/Bimax_review
+    mv /data/bimax/pw1/db/etc/out/archive_${type}_${1}.txt /data/bimax/pw1/Bimax_review
 else 
-    echo "/app/blob_query.sh output fail"
-    exit 0
+    echo "/app/db_query.sh output fail"
+    exit 1
 fi
 
-python archive_blob.py -i archive_blob_$1 -d $1
+python temp_archive_analyzer.py -i archive_${type}_$1 -d $1 -m 'Actions_actions'
