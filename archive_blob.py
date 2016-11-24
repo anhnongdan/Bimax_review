@@ -12,7 +12,7 @@ __author__ = "tony"
 __date__ = "$Nov 22, 2016 11:06:38 PM$"
 
 __module__ = "archive_blob"
-logfile = "/home/tony/bimax_docker/pw1/gits/Bimax_test/src/log/" + __module__ + ".log"
+#logfile = "/home/tony/bimax_docker/pw1/gits/Bimax_test/src/log/" + __module__ + ".log"
 #input = __module__ + ".txt"
 
 #parameters to check archive performance
@@ -26,8 +26,8 @@ def init_count_list(args):
     #start = datetime.datetime(2016, 11, 22, 0, 0, 0)
     #end = datetime.datetime(2016, 11, 22, 23, 50, 0)
     
-    start = datetime.datetime.strptime(args + '00:00:00', "%Y-%m-%d %H:%M:%S")
-    end = datetime.datetime.strptime(args + '23:50:00', "%Y-%m-%d %H:%M:%S")
+    start = datetime.datetime.strptime(args + ' 00:00:00', "%Y-%m-%d %H:%M:%S")
+    end = datetime.datetime.strptime(args + ' 23:50:00', "%Y-%m-%d %H:%M:%S")
     
     while (start <= end ):
         #print str(start)
@@ -37,7 +37,7 @@ def init_count_list(args):
 
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv,"hi:o:",["ifile=","date="])
+        opts, args = getopt.getopt(argv,"hi:d:",["ifile=","date="])
     except getopt.GetoptError:
         print 'Usage: archive_blob.py -i <inputfile> -d <date_to_inspect>'
         sys.exit(2)
