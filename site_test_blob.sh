@@ -8,7 +8,7 @@ type='blob'
 date=$1
 site=$2
 
-docker exec -it bimax_db1_1 sh /app/db_query_site.sh blob $date 'Actions_actions'
+docker exec -it bimax_db1_1 sh /app/db_query_site.sh $type $date 'Actions_actions' $site
 
 if [ -f /data/bimax/pw1/db/etc/out/${site}_archive_${type}_${1}.txt ];
 then
@@ -18,4 +18,4 @@ else
     exit 1
 fi
 
-python temp_archive_analyzer.py -i archive_${type}_$1 -d $1 -m 'Actions_actions'
+python temp_archive_analyzer.py -i archive_${type}_$1 -d $1 -m "Actions_actions"

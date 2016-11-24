@@ -95,9 +95,9 @@ def main(argv):
             continue
 
     fwrite.write("=== Bimax System Archive Report === \n")
-    fwrite.write("Datetime: {0:s}".format(datetime.datetime.now()))
-    fwrite.write("Metric calculated: {0:s}".format(metric))
-    fwrite.write("  >>>>>>>>>>>>>>><<<<<<<<<<<<<< \n \n")
+    fwrite.write("Datetime: {0:s} \n".format( str(datetime.datetime.now()) ))
+    fwrite.write("Metric calculated: {0:s} \n".format(metric))
+    fwrite.write(">>>>>>>>>>>>>>><<<<<<<<<<<<<< \n \n")
 
     fwrite.write("   *************************** \n")
     fwrite.write("   *** Archive performance *** \n")
@@ -153,7 +153,7 @@ def main(argv):
 
     for key in processed_map:
 
-        fwrite.write("calculated: {0:d} \n".format(key))
+        fwrite.write("\n calculated: {0:d} \n".format(key))
         fwrite.write("-------------------------- \n")
         i = 1
         for atime in processed_map[key]:

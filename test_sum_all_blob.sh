@@ -14,4 +14,4 @@ else
     exit 1
 fi
 
-python temp_archive_analyzer.py -i archive_${type}_$1 -d $1 -m 'Actions_actions'
+python temp_archive_analyzer.py -i archive_${type}_$1 -d $1 -m Actions_actions

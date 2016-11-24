@@ -5,7 +5,7 @@
 
 type='numeric'
 
-docker exec -it bimax_db1_1 sh /app/db_query.sh blob $1 'done%'
+docker exec -it bimax_db1_1 sh /app/db_query.sh $type $1 'done%'
 
 if [ -f /data/bimax/pw1/db/etc/out/archive_${type}_${1}.txt ];
 then

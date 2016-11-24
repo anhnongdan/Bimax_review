@@ -7,7 +7,7 @@ type='numeric'
 date=$1
 site=$2
 
-docker exec -it bimax_db1_1 sh /app/db_query_site.sh numeric $date 'done%'
+docker exec -it bimax_db1_1 sh /app/db_query_site.sh $type $date 'done%' $site
 
 if [ -f /data/bimax/pw1/db/etc/out/${site}_archive_${type}_${1}.txt ];
 then
