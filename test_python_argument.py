@@ -7,11 +7,11 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, 'hi:d:m:', ["ifile=", "date=", "metric="])
     except getopt.GetoptError:
-        print 'Usage: archive_blob.py -i <inputfile> -d <date_to_inspect>'
+        print 'Usage: temp_archive_analyzer.py -i <inputfile> -d <date_to_inspect>'
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'Usage: archive_blob.py -i <inputfile> -d <date_to_inspect>'
+            print 'Usage: temp_archive_analyzer.py -i <inputfile> -d <date_to_inspect>'
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg

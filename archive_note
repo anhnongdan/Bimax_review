@@ -1,0 +1,8 @@
+INFO [2016-11-22 20:50:11] Archived website id = 4, period = day, 0 segments, 557 visits in last 2 days, 30 visits today, Time elapsed: 1.125s
+INFO [2016-11-22 20:50:11] Archived website id = 4, 1 API requests, Time elapsed: 1.127s [1/1 done]
+INFO [2016-11-22 20:50:11] Done archiving!
+
+INFO [2016-11-22 20:50:17] Archived website id = 10, period = day, 0 segments, 100656 visits in last 2 days, 7880 visits today, Time elapsed: 1.460s
+INFO [2016-11-22 20:50:17] Archived website id = 10, 1 API requests, Time elapsed: 1.464s [1/1 done]
+INFO [2016-11-22 20:50:17] Done archiving!
+

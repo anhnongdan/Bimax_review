@@ -42,11 +42,11 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, 'hi:d:m:', ["ifile=", "date=", "metric="])
     except getopt.GetoptError:
-        print 'Usage: archive_blob.py -i <inputfile> -d <date_to_inspect>'
+        print 'Usage: temp_archive_analyzer.py -i <inputfile> -d <date_to_inspect>'
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'Usage: archive_blob.py -i <inputfile> -d <date_to_inspect>'
+            print 'Usage: temp_archive_analyzer.py -i <inputfile> -d <date_to_inspect>'
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
@@ -155,7 +155,7 @@ def main(argv):
 
         fwrite.write("\n calculated: {0:d} \n".format(key))
         fwrite.write("-------------------------- \n")
-        i = 1
+        i = 0
         for atime in processed_map[key]:
             # fwrite.write (processed_map[key] + ', ')
             fwrite.write(atime + ', ')
