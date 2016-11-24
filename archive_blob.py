@@ -26,8 +26,8 @@ def init_count_list(args):
     #start = datetime.datetime(2016, 11, 22, 0, 0, 0)
     #end = datetime.datetime(2016, 11, 22, 23, 50, 0)
     
-    start = datetime.datetime.strptime(args + ' 00:00:00', "%Y-%m-%d %H:%M:%S")
-    end = datetime.datetime.strptime(args + ' 23:50:00', "%Y-%m-%d %H:%M:%S")
+    start = datetime.datetime.strptime(args + ' 00:00:00', "%Y_%m_%d %H:%M:%S")
+    end = datetime.datetime.strptime(args + ' 23:50:00', "%Y_%m_%d %H:%M:%S")
     
     while (start <= end ):
         #print str(start)
