@@ -16,7 +16,7 @@ if [ $# -lt 3 ]; then
     exit 1
 fi
 
-output="/app/out/archive_${ar_type}_${day}"
+output="/app/out/archive_${ar_type}_${day}_$metric"
 ofile="${output}.txt"
 
 echo "select idsite from piwik_site;" | $mysql | while read site; do

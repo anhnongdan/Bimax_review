@@ -17,7 +17,7 @@ if [ $# -lt 3 ]; then
     exit 1
 fi
 
-output="/app/out/${site}_archive_${ar_type}_${day}"
+output="/app/out/${site}_archive_${ar_type}_${day}_$metric"
 ofile="${output}.txt"
 
 echo "select concat_ws(',', name, date1, date2, ts_archived) from piwik_archive_temp_${ar_type}_${day} where idsite=$site and name like '$metric';" | $mysql  >> $ofile
