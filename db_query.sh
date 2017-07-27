@@ -6,9 +6,10 @@ mysql="/data/app/bimax/flow.sh run db${4}_ mysql pw$4 -N -s -A"
 
 #Copy this file to /data/bimax/pw#/db/etc/
 
-#this takes 3 arguments for archive type: (blob or numeric)
+#this takes 4 arguments for archive type: (blob or numeric)
 # and archive day (e.g: 2016_11_24)
 # and metric (e.g: Actions_actions, done, done%. This argument accepts wildcard %)
+# and docker instance 
 
 ar_type=$1
 day=$2

@@ -5,6 +5,9 @@
 # 2 the instance number of docker that is inspected, this used for both db# and pw#
 
 type='numeric'
+date=$1
+metric='done%'
+instance=$2
 
 #docker exec -it bimax_db1_1 sh /app/db_query.sh $type $1 'done%'
 sh db_query.sh $type $1 'done%' $2
