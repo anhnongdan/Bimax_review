@@ -103,16 +103,19 @@ def main(argv):
     fwrite.write("   *** Archive performance *** \n")
     fwrite.write("   *************************** \n")
     fwrite.write("Slow archives: {0:d} minutes.\n".format(typical_archive1/60))
+    fwrite.write("Format: date1 => ts_archive [both in ICT]\n")
     fwrite.write("------------------------------- \n")
     for key in sorted(slow_archives1.iterkeys()):
         fwrite.write("{0:s} -> {1:s} \n".format(key, slow_archives1[key]))
     fwrite.write("Slow archives: {0:d} minutes.\n".format(typical_archive2/60))
+    fwrite.write("Format: date1 => ts_archive [both in ICT]\n")
     fwrite.write("------------------------------- \n")
     for key in sorted(slow_archives2.iterkeys()):
         fwrite.write("{0:s} -> {1:s} \n".format(key, slow_archives2[key]))
 
     fwrite.write('\n')
     fwrite.write("Unexpected archives \n")
+    fwrite.write("Format: date1 => ts_archive [both in ICT]\n")
     fwrite.write("------------------------------- \n")
     for key in sorted(wrong_archives.iterkeys()):
         fwrite.write("{0:s} -> {1:s} \n".format(key, wrong_archives[key]))
