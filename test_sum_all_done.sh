@@ -20,4 +20,4 @@ sh db_query.sh $type $1 'done%' $2
 #    exit 1
 #fi
 
-python temp_archive_analyzer.py -i archive_${type}_${1}_done% -d $1 -m "done flag for plugins"
+python temp_archive_analyzer.py -i pw${instance}_archive_${type}_${1}_done% -d $1 -m "done flag for plugins"

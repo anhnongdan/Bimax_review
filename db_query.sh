@@ -20,7 +20,7 @@ if [ $# -lt 4 ]; then
     exit 1
 fi
 
-output="archive_${ar_type}_${day}_$metric"
+output="pw${4}_archive_${ar_type}_${day}_$metric"
 ofile="${output}.txt"
 
 echo "select idsite from piwik_site;" | $mysql | while read site; do

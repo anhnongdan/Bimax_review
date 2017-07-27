@@ -21,4 +21,4 @@ sh db_query.sh $type $date $metric $instance
 #    exit 1
 #fi
 
-python temp_archive_analyzer.py -i archive_${type}_${date}_$metric -d $date -m $metric
+python temp_archive_analyzer.py -i pw${instance}_archive_${type}_${date}_$metric -d $date -m $metric
